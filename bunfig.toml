@@ -1,6 +1,6 @@
 # Preload runs once before any test file. Sets `globalThis.window = {}` for
-# client tests and captures real `pg` / `bcrypt` into globals so
-# `scripts/test-helpers.ts#restoreLeaves` can re-mock leaves back to their
-# real exports between test files.
+# client tests and captures the real leaf-module exports (SQL driver,
+# password wrapper) into globals so `scripts/test-helpers.ts#restoreLeaves`
+# can re-mock leaves back to their real exports between test files.
 [test]
 preload = ["./scripts/test-preload.ts"]
